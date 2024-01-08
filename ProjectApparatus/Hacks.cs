@@ -66,9 +66,9 @@ namespace ProjectApparatus
                 if (settingsData.b_DisplayDaysLeft && TimeOfDay.Instance) Render.String(Style, centeredPos.x, centeredPos.y + 7 + iY, 150f, Settings.TEXT_HEIGHT, "Days Left: " + TimeOfDay.Instance.daysUntilDeadline, GUI.color, true, true); iY += Settings.TEXT_HEIGHT - 10f;
             }
 
-            string Watermark = "Project Apparatus";
-            Watermark += " | v" + settingsData.version;
-            if (!Settings.Instance.b_isMenuOpen) Watermark += " | Press INSERT";
+            string Watermark = "";
+            Watermark += "";
+            if (!Settings.Instance.b_isMenuOpen) Watermark += "";
             if (!settingsData.b_CenteredIndicators)
             {
                 if (settingsData.b_DisplayGroupCredits && Instance.shipTerminal != null)
@@ -114,17 +114,7 @@ namespace ProjectApparatus
 
             UI.TabContents("Start", UI.Tabs.Start, () =>
             {
-                GUILayout.Label($"Welcome to Project Apparatus v{settingsData.version}!\n\n" +
-                                $"If you have suggestions, please create a pull request in the repo or reply to the UC thread.\n" +
-                                $"If you find bugs, please provide some steps on how to reproduce the problem and create an issue or pull request in the repo or reply to the UC thread");
-                GUILayout.Space(20f);
-                GUILayout.Label($"Changelog {settingsData.version}", new GUIStyle(GUI.skin.label) { fontStyle = FontStyle.Bold });
-                scrollPos = GUILayout.BeginScrollView(scrollPos, GUILayout.Height(300f));
-                GUILayout.TextArea(Settings.Changelog.changes.ToString(), GUILayout.ExpandHeight(true));
-                GUILayout.EndScrollView();
-                GUILayout.Space(20f);
-                GUILayout.Label($"Credits", new GUIStyle(GUI.skin.label) { fontStyle = FontStyle.Bold });
-                GUILayout.Label(Settings.Credits.credits.ToString());
+                
             });
 
 
